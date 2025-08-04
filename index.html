@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mila Villa | Luxury Pool Villa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+            color: #222;
+            position: relative;
+            
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(191,167,106,0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(26,54,93,0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(191,167,106,0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+        header {
+            background: #fff;
+            box-shadow: 0 8px 40px rgba(26,54,93,0.08), 0 2px 8px rgba(191,167,106,0.1);
+            padding: 0.7rem 0 0.7rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #bfa76a, transparent);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        .header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-direction: row;
+            gap: 2rem;
+            padding: 1rem 2rem;
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header-left-group {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            box-shadow: 0 4px 16px rgba(191,167,106,0.2);
+            background: #fff;
+            object-fit: cover;
+            border: 3px solid #bfa76a;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            left: 0;
+            flex-shrink: 0;
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 24px rgba(191,167,106,0.3);
+        }
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+        .header-nav a {
+            font-family: 'Raleway', sans-serif;
+            color: #1a365d;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            padding: 0.5rem 0;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+        .header-nav a:hover {
+            color: #bfa76a;
+        }
+        .header-nav a.active {
+            color: #bfa76a;
+            font-weight: 600;
+        }
+        .header-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #bfa76a;
+            transition: width 0.2s ease;
+        }
+        .header-nav a:hover::after,
+        .header-nav a.active::after {
+            width: 100%;
+        }
+        .header-title-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            text-align: right;
+        }
+        .villa-title {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #1a365d;
+            margin: 0;
+            letter-spacing: 2.5px;
+            text-shadow: 0 4px 20px #e9e3d0, 0 2px 8px rgba(191,167,106,0.3);
+            position: relative;
+            transition: transform 0.3s ease, text-shadow 0.3s ease;
+        }
+        
+        .villa-title:hover {
+            transform: scale(1.02);
+            text-shadow: 0 6px 24px #e9e3d0, 0 4px 12px rgba(191,167,106,0.4);
+        }
+        .hero {
+            background: url("page\ home.jpg") center/cover no-repeat;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(26,54,93,0.15), 0 8px 32px rgba(191,167,106,0.2);
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("page\ home.jpg") center/cover no-repeat;
+            filter: blur(0px);
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .hero:hover::before {
+            transform: scale(1.15);
+        }
+        .hero-overlay {
+            background: rgba(26,54,93,0.4);
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            backdrop-filter: blur(1px);
+        }
+        
+        .hero-overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(191,167,106,0.3) 0%, transparent 50%);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        .hero-content h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            margin: 0 0 1.2rem 0;
+            letter-spacing: 3px;
+            text-shadow: 0 8px 40px rgba(26,54,93,0.25), 0 4px 16px #bfa76a, 0 2px 8px rgba(255,255,255,0.3);
+            animation: fadeInUp 1.2s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #f5f3ef;
+            text-shadow: 0 4px 12px rgba(26,54,93,0.25);
+            animation: fadeInUp 1.2s ease-out 0.3s both;
+            font-weight: 500;
+        }
+        .section {
+            max-width: 1000px;
+            margin: 4rem auto;
+            background: #fff;
+            border-radius: 24px;
+            padding: 3rem 3rem 2.2rem 3rem;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            color: #1a365d;
+        }
+
+        .section h3 {
+            font-family: 'Cinzel', serif;
+            color: #16243a  ;
+            margin-top: 0;
+            font-size: 3rem;
+            letter-spacing: 1.5px;
+            position: relative;
+            text-shadow: 0 2px 8px rgba(191,167,106,0.2);
+            transition: transform 0.3s ease, text-shadow 0.3s ease;
+        }
+        
+        .section h3:hover {
+            transform: scale(1.02);
+        }
+        .section h3::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            margin: 18px auto 0 auto;
+            background: linear-gradient(90deg, #bfa76a 0%, #96aac4 100%);
+            border-radius: 2px;
+            opacity: 0.7;
+        }
+        .section p {
+            color: #1a365d
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.2rem;
+            margin-top: 2.5rem;
+        }
+        .feature {
+            flex: 1 1 220px;
+            background: #16243a;
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(191,167,106,0.08), 0 2px 8px rgba(26,54,93,0.05);
+            transition: all 0.3s ease;
+            border: 2px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+        }
+        
+        .feature::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(191,167,106,0.1), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .feature:hover::before {
+            left: 100%;
+        }
+        .feature:hover {
+            transform: translateY(-12px) scale(1.08);
+            box-shadow: 0 16px 48px rgba(191,167,106,0.2), 0 8px 24px rgba(26,54,93,0.1);
+            border-color: #bfa76a;
+            background: #3a4a5f;
+        }
+        .feature i {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        
+        .feature:hover i {
+            transform: scale(1.2) rotate(5deg);
+            color: #fff;
+        }
+        .gallery {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .gallery img {
+            width: 30%;
+            border-radius: 16px;
+            object-fit: cover;
+            height: 220px;
+            box-shadow: 0 6px 24px rgba(191,167,106,0.12), 0 2px 8px rgba(26,54,93,0.08);
+            transition: all 0.4s ease;
+            border: 2px solid #e2e8f0;
+            position: relative;
+        }
+        .gallery img:hover {
+            transform: scale(1.08) translateY(-12px) rotate(2deg);
+            box-shadow: 0 20px 48px rgba(191,167,106,0.25), 0 8px 24px rgba(26,54,93,0.15);
+            border-color: #bfa76a;
+            filter: brightness(1.1) contrast(1.05);
+        }
+        .contact {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        .contact a {
+            display: inline-block;
+            background: #bfa76a;
+            color: #fff;
+            padding: 1.3rem 3rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            font-size: 1.2rem;
+            letter-spacing: 1.5px;
+            box-shadow: 0 6px 24px rgba(191,167,106,0.25), 0 2px 8px rgba(26,54,93,0.1);
+            transition: all 0.3s ease;
+            border: 2px solid #bfa76a;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #1a365d;
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+        .contact a:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 12px 32px rgba(191,167,106,0.35), 0 4px 16px rgba(26,54,93,0.15);
+            border-color: #1a365d;
+        }
+        
+        .contact a:hover::before {
+            left: 0;
+        }
+        .main-nav-bar {
+            width: 100vw;
+            background:#fff;
+            border-bottom: 3px solid #bfa76a;
+            margin-bottom: 0;
+            box-sizing: border-box;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        .main-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2.5rem;
+            padding: 0.7rem 0;
+        }
+        .main-nav a {
+            font-family: 'Raleway', sans-serif;
+            color:#0f1a2e;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            padding: 0.4rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+            border: 1px solid transparent;
+        }
+        .main-nav a:hover, .main-nav a:focus {
+            color: #bfa76a;
+            transform: scale(1.1);
+          
+        }
+        .main-nav a.active {
+            color: #bfa76a;
+            font-weight: 700;
+        }
+        .main-nav a.active::after {
+            content: '';
+            display: block;
+            height: 3px;
+            width: 100%;
+            background: #bfa76a;
+            border-radius: 2px;
+            margin-top: 4px;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+        }
+        .header-center-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 0 auto;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+        .gallery-grid img {
+            width: 100%;
+            border-radius: 14px;
+            object-fit: cover;
+            height: 200px;
+            box-shadow: 0 2px 12px rgba(191,167,106,0.08);
+            transition: transform 0.25s, box-shadow 0.25s, border 0.25s;
+            border: 1.5px solid #e2e8f0;
+        }
+        .gallery-grid img:hover {
+            transform: scale(1.05) translateY(-6px);
+            box-shadow: 0 12px 36px rgba(191,167,106,0.13);
+            border-color: #bfa76a;
+        }
+        .gallery-slider-container {
+            display: flex;
+            align-items: center;
+            margin-top: 2.5rem;
+            position: relative;
+        }
+        .gallery-slider {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 1.5rem;
+            width: 100%;
+            padding: 1rem 0;
+        }
+        .gallery-slider img {
+            width: 220px;
+            height: 150px;
+            border-radius: 14px;
+            object-fit: cover;
+            box-shadow: 0 2px 12px rgba(191,167,106,0.08);
+            border: 1.5px solid #e2e8f0;
+            flex-shrink: 0;
+        }
+        .slider-btn {
+            background: #fff;
+            border: 1.5px solid #bfa76a;
+            color: #bfa76a;
+            font-size: 2rem;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            box-shadow: 0 2px 12px rgba(191,167,106,0.08);
+            transition: background 0.2s, color 0.2s;
+            z-index: 2;
+        }
+        .slider-btn:hover {
+            background: #bfa76a;
+            color: #fff;
+        }
+        .slider-btn.prev {
+            margin-right: 1rem;
+        }
+        .slider-btn.next {
+            margin-left: 1rem;
+        }
+        /* Lightbox styles */
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(15, 26, 46, 0.95);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-overlay.active {
+            display: flex;
+        }
+        .lightbox-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-img {
+            max-width: 90vw;
+            max-height: 80vh;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(191,167,106,0.4), 0 8px 32px rgba(26,54,93,0.2), 0 4px 16px #fff6e0;
+            background: #1e2d42;
+            border: 3px solid #bfa76a;
+            transition: transform 0.3s ease;
+        }
+        
+        .lightbox-img:hover {
+            transform: scale(1.02);
+        }
+        .lightbox-close {
+            position: fixed;
+            top: 40px;
+            right: 40px;
+            background: #1a365d;
+            color: #fff;
+            border: none;
+            font-size: 2.8rem;
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            cursor: pointer;
+            z-index: 10001;
+            box-shadow: 0 6px 24px rgba(191,167,106,0.25), 0 2px 8px rgba(26,54,93,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+        }
+        .lightbox-close:hover {
+            background: #bfa76a;
+            color: #1a365d;
+            transform: scale(1.1) rotate(90deg);
+        }
+        .blueprint-thumbs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            justify-content: center;
+            margin-top: 2.2rem;
+        }
+        .blueprint-thumbs img {
+            width: 140px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 2px 12px rgba(191,167,106,0.08);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+            background: #1e2d42;
+        }
+        .blueprint-thumbs img:hover {
+            transform: scale(1.07) translateY(-4px);
+            box-shadow: 0 8px 24px #bfa76a55;
+            border-color: #bfa76a;
+        }
+        .main-blueprint-img {
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .main-blueprint-img:hover {
+            box-shadow: 0 8px 32px #bfa76a99;
+            transform: scale(1.03);
+        }
+        .blueprint-thumbs img.selected {
+            border-color: #bfa76a;
+            box-shadow: 0 4px 16px #bfa76a55;
+        }
+        @media (max-width: 700px) {
+            .features, .gallery {
+                flex-direction: column;
+            }
+            .gallery img {
+                width: 100%;
+                height: 160px;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(6, 1fr);
+            }
+            .gallery-grid img {
+                height: 160px;
+            }
+            .gallery-slider img {
+                width: 120px;
+                height: 90px;
+            }
+            .section {
+                padding: 1.2rem;
+            }
+            .lightbox-img {
+                max-width: 98vw;
+                max-height: 60vh;
+            }
+            .blueprint-thumbs img {
+                width: 90px;
+                height: 60px;
+            }
+        }
+        .section p, .section div, .section li, .section span {
+            color: #1a365d;
+        }
+        .feature div, .feature span, .feature p {
+            color: #fff;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-flex">
+            <div class="header-left-group">
+                <img src="logo mali.jpg" alt="mali logo" class="logo">
+                <div class="villa-title">Mali Villa Phuket</div>
+            </div>
+            <div class="header-nav">
+                <a href="#about">About</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#location">Location</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h2>Experience Paradise at Mali Villa</h2>
+            <p>Relax, unwind, and enjoy your private oasis in Phuket.</p>
+        </div>
+    </section>
+    <section class="section" id="about">
+        <h3>About Mila Villa</h3>
+        <p>Nestled in the heart of Phuket, Mali Villa is a luxurious private pool villa designed for those who seek comfort, elegance, and privacy. Surrounded by lush tropical greenery and just minutes away from the island’s pristine beaches, this tranquil retreat blends modern architecture with authentic Thai charm.
+            Whether you're planning a romantic escape, a family vacation, or a peaceful workation, Mila Villa offers:</p>
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-swimming-pool"></i>
+                <div>Private Pool & Sun Deck</div>
+            </div>
+            <div class="feature">
+                <i class="fas fa-bed"></i>
+                <div>3 Spacious Bedrooms</div>
+            </div>
+            <div class="feature">
+                <i class="fas fa-wifi"></i>
+                <div>Smart Home Features</div>
+            </div>
+            <div class="feature">
+                <i class="fas fa-utensils"></i>
+                <div>High Investment Potential</div>
+            </div>
+            <div class="feature">
+                <i class="fas fa-car"></i>
+                <div>Private Parking</div>
+            </div>
+        </div>
+    
+   
+    </section>
+    <section class="section" id="gallery">
+        <h3>Gallery</h3>
+        <div class="gallery-grid">
+            <img src="1.jpg" alt="Villa View 1">
+            <img src="2.jpg" alt="Villa View 2">
+            <img src="3.jpg" alt="Villa View 3">
+        </div>
+        <div class="gallery-slider-container">
+            <button class="slider-btn prev">&#10094;</button>
+            <div class="gallery-slider">
+                <img src="4.jpg" alt="Villa View 4">
+                <img src="5.jpg" alt="Villa View 5">
+                <img src="6.jpg" alt="Villa View 6">
+                <img src="7.jpg" alt="Villa View 7">
+                <img src="8.jpg" alt="Villa View 8">
+                <img src="9.jpg" alt="Villa View 9">
+                <img src="10.jpg" alt="Villa View 10">
+                <img src="11.jpg" alt="Villa View 11">
+                <img src="12.jpg" alt="Villa View 12">
+                <img src="13.jpg" alt="Villa View 13">
+                <img src="14.jpg" alt="Villa View 14">
+                <img src="15.jpg" alt="Villa View 15">
+                <img src="16.jpg" alt="Villa View 16">
+                <img src="17.jpg" alt="Villa View 17">
+                <img src="18.jpg" alt="Villa View 18">
+                <img src="19.jpg" alt="Villa View 19">
+                <img src="20.jpg" alt="Villa View 20">
+                <img src="21.jpg" alt="Villa View 21">
+                <img src="22.jpg" alt="Villa View 22">
+                <img src="23.jpg" alt="Villa View 23">
+                <img src="24.jpg" alt="Villa View 24">
+            </div>
+            <button class="slider-btn next">&#10095;</button>
+        </div>
+        <div class="lightbox-overlay" id="lightboxOverlay">
+            <div class="lightbox-content">
+                <button class="lightbox-close" id="lightboxClose">&times;</button>
+                <img src="" alt="Large view" class="lightbox-img" id="lightboxImg">
+            </div>
+        </div>
+    </section>
+    <section class="section" id="masterplan">
+        <h3>Master Plan </h3>
+        <div style="text-align:center; margin-bottom:1rem;">
+            <select id="blueprintSelect" style="padding:0.5rem 1rem; font-size:1rem; border-radius:8px; border:1.5px solid #bfa76a; background:#fff; color:#1a365d; font-family:inherit;">
+                <option value="masterplan" selected>Master Plan</option>
+                <option value="a1">A1 MALIWAN</option>
+                <option value="a2">A2 MALICHAT</option>
+                <option value="a3">A3 MALILAUNG</option>
+                <option value="a4">A4 MALISON</option>
+                <option value="a5">A5 MALILA</option>
+                <option value="a6">A6 MALULI</option>
+                <option value="a7">A7 PHUTTHACHAT</option>
+            </select>
+        </div>
+        <div class="blueprint-main" style="text-align:center; margin-bottom:1.5rem;">
+            <img src="master.png" alt="Master Plan" id="mainBlueprint" class="main-blueprint-img" style="max-width:90vw; max-height:700px; border-radius:14px; box-shadow:0 2px 12px #bfa76a55; border:2px solid #bfa76a; background:#1e2d42; cursor:pointer;">
+            <div id="blueprintDetails" style="margin-top:1.2rem; text-align:left; max-width:800px; margin-left:auto; margin-right:auto; font-size:1.1rem; color:#1a365d;"></div>
+        </div>
+    </section>
+    <section class="section" id="location" style="text-align:center;">
+        <h3>Location</h3>
+        <p>Amphoe Thalang, Phuket, Thailand · Thalang, Phuket, Thailand</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.751859278099!2d98.3234842!3d8.024502400000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3050373dea040271%3A0xcf558193ec3e9ca0!2sMali%20Villa!5e0!3m2!1sth!2sth!4v1725178987751!5m2!1sth!2sth" width="100%" height="300" style="border:0; border-radius:12px; box-shadow:0 2px 12px #bfa76a22; margin-top:1.5rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div style="margin-top:2rem;">
+            <img src="map.jpg" alt="Mali Villas Area Map" style="max-width:100%; border-radius:14px; box-shadow:0 2px 12px #bfa76a55; border:2px solid #bfa76a; background:#1e2d42;">
+        </div>
+    </section>
+    <footer id="contact" style="background: #1a365d; color: #fff; padding: 3.5rem 0 1.5rem 0; margin-top: 4rem; font-family: 'Raleway', sans-serif; position: relative; overflow: hidden; box-shadow: inset 0 8px 32px rgba(191,167,106,0.1);">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 2.5rem;">
+    <!-- Address Column -->
+    <div style="flex: 1 1 260px; min-width: 220px; text-align: left;">
+      <!-- Footer logo removed -->
+      <div style="font-weight: 700; font-size: 1.13rem; color: #fff; margin-bottom: 0.7rem;">Address</div>
+      <div style="color: #e0e6f6; font-size: 1rem; line-height: 1.7;">
+        Maliwan Asset Co.,Ltd.<br>
+        169/37,Moo 1,<br>
+        Thep Krasattri sub-district,<br>
+        Thalang district, Phuket
+      </div>
+    </div>
+    <!-- Contact Column -->
+    <div style="flex: 1 1 220px; min-width: 200px; text-align: left;">
+      <div style="font-weight: 700; font-size: 1.13rem; color: #fff; margin-bottom: 0.7rem;">Contact</div>
+      <div style="color: #e0e6f6; font-size: 1rem; line-height: 1.7; display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.3rem;">
+        <i class="fas fa-phone-alt" style="color: #bfa76a;"></i> +66 95 269 6596
+      </div>
+      <div style="color: #e0e6f6; font-size: 1rem; line-height: 1.7; display: flex; align-items: center; gap: 0.6rem;">
+        <i class="fas fa-envelope" style="color: #bfa76a;"></i> info@mailwanasset.com
+      </div>
+    </div>
+    <!-- Social Media Column -->
+    <div style="flex: 1 1 220px; min-width: 200px; text-align: left;">
+      <div style="font-weight: 700; font-size: 1.13rem; color: #fff; margin-bottom: 0.7rem;">Social Media</div>
+      <div style="color: #e0e6f6; font-size: 1rem; line-height: 1.7; display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.3rem;">
+        <i class="fab fa-facebook-f" style="color: #bfa76a;"></i> malivillaphuket
+      </div>
+      <div style="color: #e0e6f6; font-size: 1rem; line-height: 1.7; display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.3rem;">
+        <i class="fab fa-whatsapp" style="color: #bfa76a;"></i> +66 95 269 6596
+      </div>
+      <div style="color: #e0e6f6; font-size: 1rem; line-height: 1.7; display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.3rem;">
+        <i class="fab fa-line" style="color: #bfa76a;"></i> malivilla
+      </div>
+      <div style="margin-top: 0.7rem;">
+        <!-- QR Code image removed -->
+      </div>
+    </div>
+  </div>
+  <div style="border-top: 1px solid #445080; margin: 2.5rem auto 0 auto; max-width: 1200px;"></div>
+  <div style="text-align: center; color: #e0e6f6; font-size: 0.98rem; margin-top: 1.2rem;">© 2025 Maliwan Asset. All Rights Reserved</div>
+</footer>
+    <script>
+// Enhanced JavaScript for luxury villa website
+
+// Page load animations
+document.addEventListener('DOMContentLoaded', function() {
+    // Animate hero content on load
+    const heroContent = document.querySelector('.hero-content');
+    heroContent.style.opacity = '0';
+    heroContent.style.transform = 'translateY(50px)';
+    
+    setTimeout(() => {
+        heroContent.style.transition = 'all 1.2s cubic-bezier(0.4, 0, 0.2, 1)';
+        heroContent.style.opacity = '1';
+        heroContent.style.transform = 'translateY(0)';
+    }, 300);
+
+    // Animate logo on load
+    const logo = document.querySelector('.logo');
+    if (logo) {
+        // Start with logo visible but small
+        logo.style.transform = 'scale(0.8)';
+        logo.style.opacity = '0.8';
+        
+        setTimeout(() => {
+            logo.style.transition = 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
+            logo.style.transform = 'scale(1)';
+            logo.style.opacity = '1';
+        }, 300);
+    }
+
+    // Animate villa title
+    const villaTitle = document.querySelector('.villa-title');
+    villaTitle.style.opacity = '0';
+    villaTitle.style.transform = 'translateX(-30px)';
+    setTimeout(() => {
+        villaTitle.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+        villaTitle.style.opacity = '1';
+        villaTitle.style.transform = 'translateX(0)';
+    }, 700);
+
+    // Animate nav links
+    const navLinks = document.querySelectorAll('.header-nav a');
+    navLinks.forEach((link, index) => {
+        link.style.opacity = '0';
+        link.style.transform = 'translateY(-20px)';
+        setTimeout(() => {
+            link.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            link.style.opacity = '1';
+            link.style.transform = 'translateY(0)';
+        }, 900 + (index * 100));
+    });
+});
+
+// Enhanced scroll animations with parallax
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            
+            // Add staggered animation for features
+            if (entry.target.classList.contains('section')) {
+                const features = entry.target.querySelectorAll('.feature');
+                features.forEach((feature, index) => {
+                    setTimeout(() => {
+                        feature.style.opacity = '1';
+                        feature.style.transform = 'translateY(0) scale(1)';
+                    }, index * 150);
+                });
+            }
+        }
+    });
+}, observerOptions);
+
+// Observe all sections for scroll animations
+document.querySelectorAll('.section').forEach(section => {
+    section.style.opacity = '0';
+    section.style.transform = 'translateY(50px)';
+    section.style.transition = 'opacity 1s ease, transform 1s ease';
+    observer.observe(section);
+    
+    // Add staggered animation for features
+    const features = section.querySelectorAll('.feature');
+    features.forEach(feature => {
+        feature.style.opacity = '0';
+        feature.style.transform = 'translateY(30px) scale(0.9)';
+        feature.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+    });
+});
+
+// Smooth scroll for all navigation links
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const target = document.querySelector(targetId);
+        
+        if (target) {
+            const headerHeight = document.querySelector('header').offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight - 20;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Enhanced header scroll effects
+let lastScrollY = 0;
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    
+    // Header background effect
+    if (currentScrollY > 50) {
+        header.style.background = 'rgba(255, 255, 255, 0.95)';
+        header.style.backdropFilter = 'blur(10px)';
+        header.style.boxShadow = '0 8px 40px rgba(26,54,93,0.12)';
+    } else {
+        header.style.background = '#fff';
+        header.style.backdropFilter = 'none';
+        header.style.boxShadow = '0 8px 40px rgba(26,54,93,0.08), 0 2px 8px rgba(191,167,106,0.1)';
+    }
+    
+    // Parallax effect for hero
+    
+    lastScrollY = currentScrollY;
+});
+
+// Enhanced gallery slider with auto-play
+const slider = document.querySelector('.gallery-slider');
+const prevBtn = document.querySelector('.slider-btn.prev');
+const nextBtn = document.querySelector('.slider-btn.next');
+let autoPlayInterval;
+
+function startAutoPlay() {
+    autoPlayInterval = setInterval(() => {
+        if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
+            slider.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+            slider.scrollBy({ left: 300, behavior: 'smooth' });
+        }
+    }, 4000);
+}
+
+function stopAutoPlay() {
+    clearInterval(autoPlayInterval);
+}
+
+// Start auto-play
+startAutoPlay();
+
+// Pause auto-play on hover
+slider.addEventListener('mouseenter', stopAutoPlay);
+slider.addEventListener('mouseleave', startAutoPlay);
+
+prevBtn.addEventListener('click', () => {
+    stopAutoPlay();
+    slider.scrollBy({ left: -300, behavior: 'smooth' });
+    setTimeout(startAutoPlay, 5000);
+});
+
+nextBtn.addEventListener('click', () => {
+    stopAutoPlay();
+    slider.scrollBy({ left: 300, behavior: 'smooth' });
+    setTimeout(startAutoPlay, 5000);
+});
+
+// Enhanced lightbox with keyboard navigation
+const lightboxOverlay = document.getElementById('lightboxOverlay');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+let currentImageIndex = 0;
+let allImages = [];
+
+function openLightbox(src, alt) {
+    // Collect all images for navigation
+    allImages = Array.from(document.querySelectorAll('.gallery-grid img, .gallery-slider img'));
+    currentImageIndex = allImages.findIndex(img => img.src === src);
+    
+    lightboxImg.src = src;
+    lightboxImg.alt = alt;
+    lightboxOverlay.classList.add('active');
+    
+    // Add entrance animation
+    lightboxImg.style.transform = 'scale(0.8)';
+    setTimeout(() => {
+        lightboxImg.style.transition = 'transform 0.3s ease';
+        lightboxImg.style.transform = 'scale(1)';
+    }, 10);
+}
+
+function closeLightbox() {
+    lightboxOverlay.classList.remove('active');
+    lightboxImg.src = '';
+    currentImageIndex = 0;
+}
+
+function navigateLightbox(direction) {
+    if (allImages.length === 0) return;
+    
+    if (direction === 'next') {
+        currentImageIndex = (currentImageIndex + 1) % allImages.length;
+    } else {
+        currentImageIndex = currentImageIndex === 0 ? allImages.length - 1 : currentImageIndex - 1;
+    }
+    
+    const newImage = allImages[currentImageIndex];
+    lightboxImg.src = newImage.src;
+    lightboxImg.alt = newImage.alt;
+}
+
+// Add click handlers for all gallery images
+document.querySelectorAll('.gallery-grid img, .gallery-slider img').forEach(img => {
+    img.addEventListener('click', () => openLightbox(img.src, img.alt));
+});
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightboxOverlay.addEventListener('click', (e) => {
+    if (e.target === lightboxOverlay) closeLightbox();
+});
+
+// Keyboard navigation for lightbox
+document.addEventListener('keydown', (e) => {
+    if (lightboxOverlay.classList.contains('active')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') navigateLightbox('next');
+        if (e.key === 'ArrowLeft') navigateLightbox('prev');
+    }
+});
+
+// Enhanced blueprint functionality
+const mainBlueprint = document.getElementById('mainBlueprint');
+const blueprintSelect = document.getElementById('blueprintSelect');
+const blueprintData = {
+    masterplan: { 
+        src: 'master.png', 
+        alt: 'Master Plan', 
+        details: '<div style="text-align: center; color: #bfa76a; font-weight: 600; font-size: 1.1rem;">Master Plan Overview</div>' 
+    },
+    a1: { 
+        src: 'a1.png', 
+        alt: 'A1 MALIWAN', 
+        details: '<div style="color: #bfa76a; font-weight: 600;">A1 MALIWAN</div><br>Luxury villa with premium amenities and stunning views.' 
+    },
+    a2: { 
+        src: 'a2.png', 
+        alt: 'A2 MALICHAT', 
+        details: '<div style="color: #bfa76a; font-weight: 600;">A2 MALICHAT</div><br>Elegant design with modern comforts and outdoor living spaces.' 
+    },
+    a3: { 
+        src: 'a3.png', 
+        alt: 'A3 MALILAUNG', 
+        details: '<div style="color: #bfa76a; font-weight: 600;">A3 MALILAUNG</div><br>Spacious layout perfect for families and entertainment.' 
+    },
+    a4: { 
+        src: 'a4.png', 
+        alt: 'A4 MALISON', 
+        details: '<div style="color: #bfa76a; font-weight: 600;">A4 MALISON</div><br>Contemporary design with luxury finishes and smart home features.' 
+    },
+    a5: { 
+        src: 'a5.png', 
+        alt: 'A5 MALILA', 
+        details: '<div style="color: #bfa76a; font-weight: 600;">A5 MALILA</div><br>Premium villa with private pool and garden areas.' 
+    },
+    a6: { 
+        src: 'a6.png', 
+        alt: 'A6 MALULI', 
+        details: '<div style="color: #bfa76a; font-weight: 600;">A6 MALULI</div><br>Exclusive design with panoramic views and luxury amenities.' 
+    },
+    a7: { 
+        src: 'a7.png', 
+        alt: 'A7 PHUTTHACHAT', 
+        details: '<div style="color: #bfa76a; font-weight: 600;">A7 PHUTTHACHAT</div><br>Ultimate luxury villa with premium features and stunning architecture.' 
+    }
+};
+
+blueprintSelect.addEventListener('change', (e) => {
+    const val = e.target.value;
+    const data = blueprintData[val];
+    
+    // Add transition effect
+    mainBlueprint.style.opacity = '0';
+    mainBlueprint.style.transform = 'scale(0.95)';
+    
+    setTimeout(() => {
+        mainBlueprint.src = data.src;
+        mainBlueprint.alt = data.alt;
+        document.getElementById('blueprintDetails').innerHTML = data.details || '';
+        
+        mainBlueprint.style.transition = 'all 0.4s ease';
+        mainBlueprint.style.opacity = '1';
+        mainBlueprint.style.transform = 'scale(1)';
+    }, 200);
+});
+
+// Initialize blueprint details
+document.getElementById('blueprintDetails').innerHTML = blueprintData[blueprintSelect.value].details || '';
+
+// Blueprint lightbox
+mainBlueprint.addEventListener('click', () => openLightbox(mainBlueprint.src, mainBlueprint.alt));
+
+// Enhanced feature hover effects
+document.querySelectorAll('.feature').forEach(feature => {
+    feature.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-15px) scale(1.05)';
+        this.style.boxShadow = '0 20px 60px rgba(191,167,106,0.3), 0 10px 30px rgba(26,54,93,0.15)';
+    });
+    
+    feature.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+        this.style.boxShadow = '0 4px 20px rgba(191,167,106,0.08), 0 2px 8px rgba(26,54,93,0.05)';
+    });
+});
+
+// Enhanced contact button effects
+document.querySelectorAll('.contact a').forEach(button => {
+    button.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-6px) scale(1.08)';
+        this.style.boxShadow = '0 16px 40px rgba(191,167,106,0.4), 0 6px 20px rgba(26,54,93,0.2)';
+    });
+    
+    button.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(-4px) scale(1.05)';
+        this.style.boxShadow = '0 12px 32px rgba(191,167,106,0.35), 0 4px 16px rgba(26,54,93,0.15)';
+    });
+});
+
+// Loading animation for images
+function preloadImages() {
+    const images = document.querySelectorAll('img');
+    images.forEach(img => {
+        img.addEventListener('load', function() {
+            this.style.opacity = '1';
+            this.style.transform = 'scale(1)';
+        });
+        
+        img.style.opacity = '0';
+        img.style.transform = 'scale(0.95)';
+        img.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    });
+}
+
+// Initialize image loading
+preloadImages();
+
+// Smooth reveal animation for sections
+const revealSections = () => {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (sectionTop < windowHeight * 0.8) {
+            section.style.opacity = '1';
+            section.style.transform = 'translateY(0)';
+        }
+    });
+};
+
+window.addEventListener('scroll', revealSections);
+window.addEventListener('load', revealSections);
+
+// Enhanced mobile responsiveness
+function handleMobileMenu() {
+    const headerNav = document.querySelector('.header-nav');
+    const headerFlex = document.querySelector('.header-flex');
+    
+    if (window.innerWidth <= 768) {
+        // Add mobile menu functionality if needed
+        headerNav.style.flexDirection = 'column';
+        headerNav.style.gap = '1rem';
+    } else {
+        headerNav.style.flexDirection = 'row';
+        headerNav.style.gap = '2.5rem';
+    }
+}
+
+window.addEventListener('resize', handleMobileMenu);
+handleMobileMenu();
+
+// Performance optimization
+let ticking = false;
+function updateOnScroll() {
+    if (!ticking) {
+        requestAnimationFrame(() => {
+            // Scroll-based animations here
+            ticking = false;
+        });
+        ticking = true;
+    }
+}
+
+window.addEventListener('scroll', updateOnScroll);
+
+// Add loading screen
+window.addEventListener('load', () => {
+    document.body.style.opacity = '1';
+    document.body.style.transition = 'opacity 0.5s ease';
+});
+
+// Initialize page
+document.body.style.opacity = '0';
+</script>
+</body>
+</html>
